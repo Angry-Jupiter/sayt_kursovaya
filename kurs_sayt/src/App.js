@@ -25,7 +25,10 @@ const items = [
   icon: React.createElement(icon),
   label: `nav ${index + 1}`,
 }));
-const huh = [{"url": "/paper_files/paper/2022/hash/002262941c9edfd472a79298b2ac5e17-Abstract-Conference.html", "name": "Federated Submodel Optimization for Hot and Cold Data Features"}, {"url": "/paper_files/paper/2022/hash/00295cede6e1600d344b5cd6d9fd4640-Abstract-Conference.html", "name": "On Kernelized Multi-Armed Bandits with Constraints"}, {"url": "/paper_files/paper/2022/hash/00358de35a101a372ea0412bed913c86-Abstract-Conference.html", "name": "Geometric Order Learning for Rank Estimation"}]
+
+const huh = require('./data.json');
+console.log(huh);
+
 const App = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -62,25 +65,28 @@ const App = () => {
             overflow: 'initial',
           }}
         >
+          <div style={{padding: 24, textAlign: 'central', background: colorBgContainer, borderRadius: borderRadiusLG,}}><h3>Articles I recommend reading #^^#</h3></div>
           <div
             style={{
               padding: 24,
-              textAlign: 'center',
+              textAlign: 'left',
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
           >
-            <p>long content</p>
             {
               // indicates very long content
               Array.from(
                 {
-                  length: 3,
+                  length: 100,
                 },
-                (_, index) => (
+                (_, index) => ( 
                   <React.Fragment key={index}>
-                    {huh[index].url}
-                    <br />
+                    <a href = {huh[index].url}>
+                    {huh[index].name}
+                    </a><br/>
+                    <p>Authors:{huh[index].authors}</p>
+                    <br /><br />
                   </React.Fragment>
                 ),
               )
