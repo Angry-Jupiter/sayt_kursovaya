@@ -85,7 +85,8 @@ const App = () => {
                     <a href = {huh[index].url}>
                     {huh[index].name}
                     </a><br/>
-                    <p>Authors:{huh[index].authors}</p>
+                    <p><a href = {huh[index].url2}>Authors:{huh[index].authors}</a></p>
+
                     <br /><br />
                   </React.Fragment>
                 ),
