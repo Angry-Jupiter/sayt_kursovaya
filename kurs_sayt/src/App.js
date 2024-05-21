@@ -10,6 +10,8 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
+
+
 const { Header, Content, Footer, Sider } = Layout;
 const items = [
   UserOutlined,
@@ -30,6 +32,7 @@ const huh = require('./data.json');
 console.log(huh);
 
 const App = () => {
+  
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -65,7 +68,7 @@ const App = () => {
             overflow: 'initial',
           }}
         >
-          <div style={{padding: 24, textAlign: 'central', background: colorBgContainer, borderRadius: borderRadiusLG,}}><h3>Articles I recommend reading #^^#</h3></div>
+          <div style={{padding: 24, textAlign: 'central', background: colorBgContainer, borderRadius: borderRadiusLG,}}><h3>Articles I recommend reading! </h3></div>
           <div
             style={{
               padding: 24,
@@ -78,7 +81,7 @@ const App = () => {
               // indicates very long content
               Array.from(
                 {
-                  length: 100,
+                  length: 50,
                 },
                 (_, index) => ( 
                   <React.Fragment key={index}>
@@ -86,7 +89,8 @@ const App = () => {
                     {huh[index].name}
                     </a><br/>
                     <p><a href = {huh[index].url2}>Authors:{huh[index].authors}</a></p>
-
+                    <br/>
+                    <p>Is Good:{huh[index].isGood}</p>
                     <br /><br />
                   </React.Fragment>
                 ),
